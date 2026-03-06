@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Junior JavaScript Developer Survey</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="lang-toggle">
+            <button type="button" id="lang-en" class="lang-btn active">English</button>
+            <button type="button" id="lang-fi" class="lang-btn">Suomi</button>
+            <button type="button" id="dark-toggle" class="dark-btn" aria-label="Toggle dark mode">🌙</button>
+        </div>
+        <h1><span data-i18n="title">Junior JavaScript Developer Survey</span></h1>
+        <form id="surveyForm" novalidate>
+            <div class="form-group">
+                <label for="name"><span data-i18n="name">Name</span> *</label>
+                <input type="text" id="name" name="name" required>
+                <div class="error" id="error-name"></div>
+            </div>
+            <div class="form-group">
+                <label for="email"><span data-i18n="email">Email</span> *</label>
+                <input type="email" id="email" name="email" required>
+                <div class="error" id="error-email"></div>
+            </div>
+            <div class="form-group">
+                <label for="whyRole"><span data-i18n="whyRole">Why do you want this role in the EPSI Data Collection team?</span> *</label>
+                <textarea id="whyRole" name="whyRole" required></textarea>
+                <div class="error" id="error-whyRole"></div>
+            </div>
+            <div class="form-group">
+                <label for="researchInterest"><span data-i18n="researchInterest">What do you think about the research and data field and why does it interest you?</span> *</label>
+                <textarea id="researchInterest" name="researchInterest" required></textarea>
+                <div class="error" id="error-researchInterest"></div>
+            </div>
+            <div class="form-group">
+                <label for="jsProject"><span data-i18n="jsProject">Describe a project where you used JavaScript and explain what you built.</span> *</label>
+                <textarea id="jsProject" name="jsProject" required></textarea>
+                <div class="error" id="error-jsProject"></div>
+            </div>
+            <div class="form-group">
+                <label><span data-i18n="student">Are you currently a student?</span> *</label>
+                <div>
+                    <input type="radio" id="studentYes" name="student" value="Yes" required>
+                    <label for="studentYes"><span data-i18n="yes">Yes</span></label>
+                    <input type="radio" id="studentNo" name="student" value="No">
+                    <label for="studentNo"><span data-i18n="no">No</span></label>
+                </div>
+                <div class="error" id="error-student"></div>
+            </div>
+            <div id="studentFields" style="display:none;">
+                <div class="form-group">
+                    <label for="schoolName"><span data-i18n="schoolName">School name</span> *</label>
+                    <input type="text" id="schoolName" name="schoolName">
+                    <div class="error" id="error-schoolName"></div>
+                </div>
+                <div class="form-group">
+                    <label for="gradYear"><span data-i18n="gradYear">Expected graduation year</span> *</label>
+                    <input type="number" id="gradYear" name="gradYear" min="2024" max="2030">
+                    <div class="error" id="error-gradYear"></div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="startDate"><span data-i18n="startDate">When can you start working?</span> *</label>
+                <input type="date" id="startDate" name="startDate" required>
+                <div class="error" id="error-startDate"></div>
+            </div>
+            <div class="form-group">
+                <label for="hours"><span data-i18n="hours">How many hours per week can you work?</span> *</label>
+                <input type="number" id="hours" name="hours" min="1" max="40" required>
+                <div class="error" id="error-hours"></div>
+            </div>
+            <div class="form-group">
+                <label for="salary"><span data-i18n="salary">Salary expectation (€ per hour)</span> *</label>
+                <input type="number" id="salary" name="salary" min="10" max="40" required>
+                <div class="error" id="error-salary"></div>
+            </div>
+            <button type="submit"><span data-i18n="submit">Submit</span></button>
+        </form>
+        <div id="preview" class="preview-section" style="display:none;"></div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
